@@ -1,0 +1,28 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+ 
+ td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+ 
+ 
+  tbody tr:nth-child(even) {
+    background-color: gray;
+  }
+ 
+  tbody tr:nth-child(odd) {
+    background-color:lightgray;
+  }
+ 
+  tbody tr:hover{
+    background-color: rgb(27, 68, 255);
+  }
+ 
+  thead td {
+    background-color: rgb(2, 0, 128);
+    font-weight: bolder;
+  }
