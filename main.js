@@ -47,4 +47,20 @@ for (person of array) {
     row.appendChild(ln);
     row.appendChild(fn);
     tbody.appendChild(row);
+
+
+    row.addEventListener('click', function(e)
+    {
+        let a = tbody.querySelector('.selected');
+        console.log("clicked:" + lastname);
+        
+        if(a){
+            a.classList.remove('selected');
+        }
+        e.currentTarget.classList.add('selected');
+        
+    })
+   
+        
 }
+
