@@ -88,7 +88,33 @@ for (person of array) {
 
         e.currentTarget.classList.add('selected');
         
-    })
+    });
 
-}
+};
+
+const form = document.getElementById('form');
+form.addEventListener('submit', function(e)
+{
+    e.preventDefault();
+    const lastname = document.getElementById('lastname');
+    const firstname1 = document.getElementById('firstname1');
+    const firstname2 = document.getElementById('firstname2');
+    const married = document.getElementById('married');
+    const pet = document.getElementById('pet');
+    
+    const LastnameVale = lastname.value;
+    const FirstnameValue1 = firstname1.value;
+    const FirstnameValue2 = firstname2.value;
+    const MarriedValue = married.value;
+    const PetValue = pet.value;
+
+    array.push(
+        {
+            lastname: LastnameVale, firstname1: FirstnameValue1, 
+            firstname2: FirstnameValue2, married: MarriedValue,
+            pet: PetValue
+        });
+    console.log('array');
+});
+
 
