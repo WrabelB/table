@@ -24,3 +24,10 @@ table {
 .selected{
   transform: scale(1.2);
 }
+
+.error{
+  color: red;
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+}

@@ -56,8 +56,8 @@ tableheaderRow.appendChild(pet);
 
 const form = document.getElementById('form');
 form.addEventListener('submit', function(e)
-    
 {
+
     tbody.innerHTML = ''
     e.preventDefault();
     const lastname = document.getElementById('lastname');
@@ -72,14 +72,19 @@ form.addEventListener('submit', function(e)
     const MarriedValue = married.checked;
     const PetValue = pet.value;
 
-    array.push(
-        {
-            lastname: LastnameVale, firstname1: FirstnameValue1, 
+    
+
+
+    if(ValidétFíldsz(lastname, firstname1, pet))
+    {
+        array.push( {lastname: LastnameVale, firstname1: FirstnameValue1, 
             firstname2: FirstnameValue2, married: MarriedValue,
-            pet: PetValue
-        });
+            pet: PetValue});
+    }
+
     console.log(array);
     RendelTéböl();
+
 });
 
 RendelTéböl();
@@ -126,5 +131,35 @@ function RendelTéböl()
         });
     
     };
+
+}
+
+function ValidétFíldsz(lastname, firstname1, pet)
+{
+    const errorMessages = form.querySelectorAll('.error');
+    for(const error of errorMessages)
+    {
+        error.innerHTML = '';
+    }
+    let result = true;
+    if(lastname.value === '')
+    {
+        let error = lastname.parentElement.querySelector('.error');
+        error.innerHTML = "A vezeteknev kotelezo :D"
+        result = false;
+    }
+    if(firstname1.value === '')
+    {
+        let error = firstname1.parentElement.querySelector('.error');
+        error.innerHTML = "A firstname kotelezo, IRD MAR ODA EMBER!!!."
+        result = false;
+    }
+    if(pet.value === '')
+    {
+        let error = pet.parentElement.querySelector('.error');
+        error.innerHTML = "A pet kotelezo, tudom hogy van allatod, latlak."
+        result = false;
+    }    
+    return result;
 
 }
