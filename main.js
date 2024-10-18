@@ -34,23 +34,16 @@ table.appendChild(tableheader);
 const tableheaderRow = document.createElement('tr');
 tableheader.appendChild(tableheaderRow);
 
-const lastname = document.createElement('th');
-lastname.innerHTML = "Vezetéknév";
-const firstname = document.createElement('th');
-firstname.innerHTML = "Keresztnév";
-const married = document.createElement('th');
-married.innerHTML = "Házasság";
-const pet = document.createElement('th');
-pet.innerHTML = "Állat";
+
+CreateTableCell('th', 'Vezetéknév', tableheaderRow);
+CreateTableCell('th', 'Keresztnév', tableheaderRow);
+CreateTableCell('th', 'Házasság', tableheaderRow);
+CreateTableCell('th', 'Állat', tableheaderRow);
 
 document.body.appendChild(table);
 const tbody = document.createElement('tbody');
 table.appendChild(tbody);
 
-tableheaderRow.appendChild(lastname);
-tableheaderRow.appendChild(firstname);
-tableheaderRow.appendChild(married);
-tableheaderRow.appendChild(pet);
 
 
 
@@ -74,7 +67,6 @@ form.addEventListener('submit', function(e)
 
     
 
-
     if(ValidétFíldsz(lastname, firstname1, pet))
     {
         array.push( {lastname: LastnameVale, firstname1: FirstnameValue1, 
@@ -93,6 +85,7 @@ function RendelTéböl()
 {
     for (person of array) {
         const row = document.createElement('tr');
+        tbody.appendChild(row);
         const fn = document.createElement('td');
         const fn1 = document.createElement('td');
         const marriedTableBodyRow = document.createElement('td');
@@ -112,7 +105,6 @@ function RendelTéböl()
     
         row.appendChild(ln);
         row.appendChild(fn);
-        tbody.appendChild(row);
         row.appendChild(marriedTableBodyRow);
         row.appendChild(petTableBodyRow);
         
@@ -133,6 +125,20 @@ function RendelTéböl()
     };
 
 }
+/**
+ * 
+ * @param {'td'| 'th'} tagName 
+ * @param {string} innerHTML 
+ * @param {HTMLTableRowElement} parent 
+ */
+function CreateTableCell(tagName, innerHTML, parent)
+{
+    const cella = document.createElement(tagName);
+    cella.innerHTML = innerHTML;
+    parent.appendChild(cella);
+}
+
+
 
 function ValidétFíldsz(lastname, firstname1, pet)
 {
