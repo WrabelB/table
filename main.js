@@ -136,6 +136,7 @@ function CreateTableCell(tagName, innerHTML, parent)
     const cella = document.createElement(tagName);
     cella.innerHTML = innerHTML;
     parent.appendChild(cella);
+    return cella;
 }
 
 
