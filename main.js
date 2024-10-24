@@ -36,7 +36,7 @@ tableheader.appendChild(tableheaderRow);
 
 
 CreateTableCell('th', 'Vezetéknév', tableheaderRow);
-CreateTableCell('th', 'Keresztnév', tableheaderRow);
+CreateTableCell('th', 'Keresztnév', colspan: 2,  tableheaderRow);
 CreateTableCell('th', 'Házasság', tableheaderRow);
 CreateTableCell('th', 'Állat', tableheaderRow);
 
