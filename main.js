@@ -32,25 +32,14 @@ let array = [
 createHTMLElement('table', 'persontable', document.body);
 createHTMLElementWithParentID('thead', 'personthead', 'persontable');
 createHTMLElementWithParentID('tr', 'persontr', 'personthead');
-
-
-
-CreateTableCell('th', 'Vezetéknév', persontr);
-CreateTableCell('th', 'Keresztnév', persontr)
-CreateTableCell('th', 'Házasság', persontr);
-CreateTableCell('th', 'Állat', persontr);
-
-document.body.appendChild(table);
-const tbody = document.createElement('tbody');
-table.appendChild(tbody);
-
-
+createHTMLElementWithParentID('tbody', 'persontbody', 'persontable');
+renderTableHeader();
 
 
 const form = document.getElementById('form');
 form.addEventListener('submit', function(e)
 {
-
+    const tbody = document.getElementById('persontbody')
     tbody.innerHTML = ''
     e.preventDefault();
     const lastname = document.getElementById('lastname');
@@ -75,10 +64,10 @@ form.addEventListener('submit', function(e)
     }
 
     console.log(array);
-    RendelTéböl();
+    RendelTéböl(array);
 
     form.reset();
 
 });
 
-RendelTéböl();
+RendelTéböl(array);

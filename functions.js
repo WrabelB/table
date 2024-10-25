@@ -33,9 +33,21 @@ function createHTMLElementWithParentID(tag, id, parentid)
        createHTMLElement(tag, id, parent);
 }
 
-function RendelTéböl()
+function renderTableHeader()
 {
-    for (person of array) {
+    const render = document.getElementById('persontr');
+    CreateTableCell('th', 'Vezetéknév', render);
+    const keresztnev = CreateTableCell('th', 'Keresztnév', render);
+    keresztnev.colSpan;
+    CreateTableCell('th', 'Házasság', render);
+    CreateTableCell('th', 'Állat', render);
+}
+
+function RendelTéböl(personArray)
+{
+    const tbody = document.getElementById('persontbody')
+    for (person of personArray) 
+        {
         const row = document.createElement('tr');
         tbody.appendChild(row);
         const fn = document.createElement('td');
@@ -63,11 +75,11 @@ function RendelTéböl()
         
         row.addEventListener('click', function(e)
         {
-            let professzionalisValtozoAmitHasznalokUgyseTalalodKiMireHasznalomHahaha = tbody.querySelector('.selected');
+            let x = tbody.querySelector('.selected');
             console.log("clicked:" + lastname);
             
-            if(professzionalisValtozoAmitHasznalokUgyseTalalodKiMireHasznalomHahaha)
-                professzionalisValtozoAmitHasznalokUgyseTalalodKiMireHasznalomHahaha.classList.remove('selected');
+            if(x)
+                x.classList.remove('selected');
     
             e.currentTarget.classList.add('selected');
             
