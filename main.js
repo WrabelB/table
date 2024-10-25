@@ -36,7 +36,7 @@ tableheader.appendChild(tableheaderRow);
 
 
 CreateTableCell('th', 'Vezetéknév', tableheaderRow);
-CreateTableCell('th', 'Keresztnév', colspan: 2,  tableheaderRow);
+CreateTableCell('th', 'Keresztnév', tableheaderRow);
 CreateTableCell('th', 'Házasság', tableheaderRow);
 CreateTableCell('th', 'Állat', tableheaderRow);
 
@@ -76,6 +76,8 @@ form.addEventListener('submit', function(e)
 
     console.log(array);
     RendelTéböl();
+
+    form.reset();
 
 });
 
