@@ -26,12 +26,19 @@ function createHTMLElement(tag, id, parent)
     parent.appendChild(tag_HTML)
 }
 
+/**
+ * 
+ * @param {string} tag 
+ * @param {number} id 
+ * @param {string} parentid
+ */
 function createHTMLElementWithParentID(tag, id, parentid)
 {
     const parent = document.getElementById(parentid);
     if(parent != undefined)
        createHTMLElement(tag, id, parent);
 }
+
 
 function renderTableHeader()
 {
@@ -43,6 +50,10 @@ function renderTableHeader()
     CreateTableCell('th', 'Állat', render);
 }
 
+/**
+ * 
+ * @param {Array<Object>} personArray 
+ */
 function RendelTéböl(personArray)
 {
     const tbody = document.getElementById('persontbody')
@@ -89,7 +100,12 @@ function RendelTéböl(personArray)
 
 }
 
-
+/**
+ * 
+ * @param {HTMLInputElement} lastname
+ * @param {HTMLInputElement} firstname1 
+ * @param {HTMLInputElement} pet 
+ */
 function ValidétFíldsz(lastname, firstname1, pet)
 {
     const errorMessages = form.querySelectorAll('.error');
