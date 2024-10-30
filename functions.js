@@ -86,7 +86,7 @@ function RendelTéböl(personArray)
         
         row.addEventListener('click', function(e)
         {
-            let x = tbody.querySelector('.selected');
+            const x = tbody.querySelector('.selected');
             console.log("clicked:" + lastname);
             
             if(x)
